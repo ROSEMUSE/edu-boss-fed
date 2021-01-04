@@ -46,11 +46,11 @@
               type="success"
               @click="
                 $router.push({
-                  name: 'course-section',
+                  name: 'course-video',
                   query: {
-                    courseId: courseInfo.courseId,
+                    courseId: courseId,
                     courseName: course.courseName,
-                    sectionName: node.parent.sectionName,
+                    sectionName: node.parent.data.sectionName,
                     theme: data.theme,
                     lessonId: node.parent.id,
                   },
@@ -324,8 +324,7 @@ export default Vue.extend({
         this.$message.error("排序失败");
       }
       this.isLoading = false;
-    },
-
+    }
   },
 });
 </script>
