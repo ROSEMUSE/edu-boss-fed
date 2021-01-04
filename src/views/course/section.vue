@@ -44,7 +44,18 @@
             >
             <el-button
               type="success"
-              @click="uploadVideo(data, node.parent.data)"
+              @click="
+                $router.push({
+                  name: 'course-section',
+                  query: {
+                    courseId: courseInfo.courseId,
+                    courseName: course.courseName,
+                    sectionName: node.parent.sectionName,
+                    theme: data.theme,
+                    lessonId: node.parent.id,
+                  },
+                })
+              "
               >上传视频</el-button
             >
             <el-select
@@ -315,16 +326,6 @@ export default Vue.extend({
       this.isLoading = false;
     },
 
-    uploadVideo(item: any, parent: any) {
-      console.log(item, parent);
-      this.$router.push({name:'course-video',query:{
-        courseId:this.courseId,
-        courseName:this.course.courseName,
-        sectionName: parent.sectionName,
-        theme:item.theme,
-        lessonId:parent.id
-      }})
-    },
   },
 });
 </script>
