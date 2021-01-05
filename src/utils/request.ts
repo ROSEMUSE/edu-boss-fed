@@ -6,7 +6,7 @@ import qs from 'qs'
 
 const request = axios.create({
   // 配置选项
-  // baseURL,
+  baseURL:process.env.VUE_APP_BASE_BOSS
   // timeout
 })
 
@@ -20,7 +20,7 @@ function redirectLogin() {
 }
 
 function refreshToken() {
-  return axios.create()({
+  return axios.create({baseURL:process.env.VUE_APP_BASE_FRONT})({
     method: 'POST',
     url: '/front/user/refresh_token',
     data: qs.stringify({
