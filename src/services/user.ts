@@ -3,6 +3,7 @@
  */
 
 import request from '@/utils/request'
+import loginRequest from '@/utils/loginRequest'
 import qs from 'qs'
 
 interface User {
@@ -11,7 +12,7 @@ interface User {
 }
 
 export const login = (data: User) => {
-  return request({
+  return loginRequest({
     method: 'POST',
     url: '/front/user/login',
     // headers: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -24,7 +25,7 @@ export const login = (data: User) => {
 }
 
 export const getUserInfo = () => {
-  return request({
+  return loginRequest({
     method: 'GET',
     url: '/front/user/getInfo'
   })
