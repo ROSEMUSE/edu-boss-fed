@@ -5,6 +5,7 @@ module.exports = (req, res) => {
 
   // 代理目标地址
   if (req.url.includes('/api/front')) {
+      console.log("配置成功");
     target = 'http://edufront.lagou.com/'
   }else if(req.url.startsWith('/api/boss')){
     target = 'http://eduboss.lagou.com/'
