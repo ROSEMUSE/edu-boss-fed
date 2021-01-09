@@ -5,9 +5,9 @@ module.exports = (req, res) => {
 
   // 代理目标地址
   if (req.url.includes('/api/front')) {
-    target = 'http://edufront.lagou.com'
+    target = 'http://edufront.lagou.com/'
   }else if(req.url.startsWith('/api/boss')){
-    target = 'http://eduboss.lagou.com'
+    target = 'http://eduboss.lagou.com/'
   }
 
   // 创建代理对象并转发请求
